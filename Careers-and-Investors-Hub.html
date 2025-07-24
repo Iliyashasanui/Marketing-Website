@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers & Investors - HICOM</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e293b',
+                        secondary: '#d4af37'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-primary shadow-lg">
+        <div class="w-full px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-8">
+                    <div class="text-secondary text-2xl font-['Pacifico']">HICOM</div>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="#" class="text-white hover:text-secondary transition-colors">Home</a>
+                        <a href="#" class="text-white hover:text-secondary transition-colors">Services</a>
+                        <a href="#" class="text-white hover:text-secondary transition-colors">About</a>
+                        <a href="#" class="text-secondary font-medium">Careers & Investors</a>
+                        <a href="#" class="text-white hover:text-secondary transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <select class="bg-primary text-white border border-secondary rounded px-3 py-1 text-sm">
+                        <option>EN</option>
+                        <option>हिं</option>
+                    </select>
+                    <button class="w-8 h-8 flex items-center justify-center text-white hover:text-secondary">
+                        <i class="ri-search-line"></i>
+                    </button>
+                    <button class="md:hidden w-8 h-8 flex items-center justify-center text-white">
+                        <i class="ri-menu-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tab Navigation -->
+    <div class="bg-gray-50 border-b">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex space-x-1">
+                <button id="careersTab" class="tab-btn active px-6 py-4 font-medium text-primary border-b-2 border-secondary">
+                    Careers
+                </button>
+                <button id="investorsTab" class="tab-btn px-6 py-4 font-medium text-gray-600 border-b-2 border-transparent hover:text-primary">
+                    Investors
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Careers Hero Section -->
+    <section id="careersHero" class="hero-section relative min-h-screen flex items-center" style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20diverse%20tech%20team%20collaborating%20in%20modern%20office%20environment%20with%20computers%20and%20digital%20screens%2C%20corporate%20atmosphere%2C%20natural%20lighting%2C%20professional%20attire%2C%20teamwork%2C%20innovation%2C%20technology%20workspace%2C%20clean%20modern%20interior%20design%2C%20business%20setting&width=1920&height=1080&seq=careers-hero&orientation=landscape'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-primary bg-opacity-70"></div>
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    Build the Future <span class="text-secondary">with Us</span>
+                </h1>
+                <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+                    Join a team that's transforming internet and IT solutions for enterprises across India. Shape tomorrow's technology today.
+                </p>
+                <button class="bg-secondary text-primary px-8 py-4 !rounded-button font-semibold text-lg hover:bg-yellow-400 transition-colors whitespace-nowrap">
+                    View Open Positions
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investors Hero Section -->
+    <section id="investorsHero" class="hero-section hidden relative min-h-screen flex items-center" style="background-image: url('https://readdy.ai/api/search-image?query=Global%20network%20connectivity%20visualization%20with%20world%20map%2C%20digital%20connections%2C%20data%20flow%2C%20financial%20technology%2C%20corporate%20investment%20theme%2C%20blue%20and%20gold%20color%20scheme%2C%20professional%20business%20atmosphere%2C%20modern%20digital%20interface%2C%20network%20nodes%20and%20connections&width=1920&height=1080&seq=investors-hero&orientation=landscape'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-primary bg-opacity-80"></div>
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+                    Investor <span class="text-secondary">Centre</span>
+                </h1>
+                <p class="text-xl text-gray-200 mb-12 max-w-2xl mx-auto">
+                    Access comprehensive financial information, reports, and regulatory disclosures for HICOM shareholders and potential investors.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="bg-secondary text-primary px-6 py-3 !rounded-button font-semibold hover:bg-yellow-400 transition-colors whitespace-nowrap">
+                        Latest Reports
+                    </button>
+                    <button class="border-2 border-secondary text-secondary px-6 py-3 !rounded-button font-semibold hover:bg-secondary hover:text-primary transition-colors whitespace-nowrap">
+                        Share Information
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Content -->
+    <div id="careersContent" class="careers-content">
+        <!-- Why Work With HICOM Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-primary mb-4">Why Work With HICOM?</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Join a company that values innovation, growth, and your professional development
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="value-card bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-lg mb-6">
+                            <i class="ri-lightbulb-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4">Innovation</h3>
+                        <p class="text-gray-600">Work with cutting-edge technologies and contribute to groundbreaking solutions that shape the future of IT infrastructure.</p>
+                    </div>
+                    <div class="value-card bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-lg mb-6">
+                            <i class="ri-arrow-up-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4">Growth</h3>
+                        <p class="text-gray-600">Accelerate your career with mentorship programs, skill development opportunities, and clear advancement pathways.</p>
+                    </div>
+                    <div class="value-card bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-lg mb-6">
+                            <i class="ri-team-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4">Culture</h3>
+                        <p class="text-gray-600">Be part of a diverse, inclusive team that celebrates collaboration, creativity, and mutual respect.</p>
+                    </div>
+                    <div class="value-card bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-lg mb-6">
+                            <i class="ri-home-wifi-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4">Remote Flexibility</h3>
+                        <p class="text-gray-600">Enjoy hybrid work options that balance productivity with work-life integration and personal well-being.</p>
+                    </div>
+                    <div class="value-card bg-gray-50 p-8 rounded-lg hover:shadow-lg transition-all duration-300 hover:-translate-y-2">
+                        <div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-lg mb-6">
+                            <i class="ri-book-open-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4">Learning</h3>
+                        <p class="text-gray-600">Access continuous learning resources, certifications, and training programs to stay ahead in your field.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Listings Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-primary mb-4">Open Positions</h2>
+                    <p class="text-xl text-gray-600">Find your next opportunity with us</p>
+                </div>
+                
+                <!-- Filters -->
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <select class="border border-gray-300 rounded px-4 py-2 bg-white">
+                        <option>All Locations</option>
+                        <option>Mumbai</option>
+                        <option>Delhi</option>
+                        <option>Bangalore</option>
+                        <option>Remote</option>
+                    </select>
+                    <select class="border border-gray-300 rounded px-4 py-2 bg-white">
+                        <option>All Departments</option>
+                        <option>Engineering</option>
+                        <option>Sales</option>
+                        <option>Marketing</option>
+                        <option>Operations</option>
+                    </select>
+                    <select class="border border-gray-300 rounded px-4 py-2 bg-white">
+                        <option>All Types</option>
+                        <option>Full-time</option>
+                        <option>Hybrid</option>
+                        <option>Internship</option>
+                    </select>
+                </div>
+
+                <!-- Job Cards -->
+                <div class="grid gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-primary mb-2">Senior Network Engineer</h3>
+                                <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-map-pin-line"></i>
+                                        Mumbai
+                                    </span>
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-briefcase-line"></i>
+                                        Full-time
+                                    </span>
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-team-line"></i>
+                                        Engineering
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="bg-secondary text-primary px-3 py-1 rounded-full text-sm font-medium">New</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Lead network infrastructure projects and optimize enterprise connectivity solutions. 5+ years experience required.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-gray-800 transition-colors whitespace-nowrap">
+                                Apply Now
+                            </button>
+                            <button class="border border-primary text-primary px-4 py-2 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-primary mb-2">Cloud Solutions Architect</h3>
+                                <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-map-pin-line"></i>
+                                        Bangalore
+                                    </span>
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-briefcase-line"></i>
+                                        Hybrid
+                                    </span>
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-team-line"></i>
+                                        Engineering
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Design and implement scalable cloud infrastructure for enterprise clients. AWS/Azure certification preferred.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-gray-800 transition-colors whitespace-nowrap">
+                                Apply Now
+                            </button>
+                            <button class="border border-primary text-primary px-4 py-2 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-primary mb-2">Business Development Manager</h3>
+                                <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-map-pin-line"></i>
+                                        Delhi
+                                    </span>
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-briefcase-line"></i>
+                                        Full-time
+                                    </span>
+                                    <span class="flex items-center gap-1">
+                                        <i class="ri-team-line"></i>
+                                        Sales
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Drive enterprise sales growth and build strategic partnerships. Strong B2B sales background required.
+                        </p>
+                        <div class="flex gap-3">
+                            <button class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-gray-800 transition-colors whitespace-nowrap">
+                                Apply Now
+                            </button>
+                            <button class="border border-primary text-primary px-4 py-2 !rounded-button font-medium hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Upload CTA -->
+        <section class="py-20 bg-primary">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-white mb-4">
+                    Didn't find the role you're looking for?
+                </h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Submit your resume and we'll reach out when a suitable position opens up.
+                </p>
+                <div class="bg-white p-8 rounded-lg max-w-md mx-auto">
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-secondary transition-colors cursor-pointer">
+                        <div class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-lg mx-auto mb-4">
+                            <i class="ri-upload-cloud-line text-2xl text-gray-600"></i>
+                        </div>
+                        <p class="text-gray-600 mb-2">Drop your resume here or</p>
+                        <button class="text-secondary font-medium hover:underline">browse files</button>
+                    </div>
+                    <button class="w-full bg-secondary text-primary py-3 !rounded-button font-semibold mt-4 hover:bg-yellow-400 transition-colors whitespace-nowrap">
+                        Submit Resume
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Investors Content -->
+    <div id="investorsContent" class="investors-content hidden">
+        <!-- Share Holding & Documents Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Share Holding Pattern -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-8">Share Holding Pattern</h2>
+                        <div class="bg-gray-50 p-8 rounded-lg">
+                            <div class="flex items-center justify-between mb-6">
+                                <h3 class="text-xl font-semibold text-primary">Latest Report</h3>
+                                <span class="text-sm text-gray-600">Q4 2024</span>
+                            </div>
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Promoter Holdings</span>
+                                    <span class="font-semibold">51.2%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Public Holdings</span>
+                                    <span class="font-semibold">35.8%</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Institutional Holdings</span>
+                                    <span class="font-semibold">13.0%</span>
+                                </div>
+                            </div>
+                            <button class="w-full bg-primary text-white py-3 !rounded-button font-medium hover:bg-gray-800 transition-colors whitespace-nowrap">
+                                <i class="ri-download-line mr-2"></i>
+                                Download Full Report
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Investor Documents -->
+                    <div>
+                        <h2 class="text-3xl font-bold text-primary mb-8">Investor Documents</h2>
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-lg">
+                                            <i class="ri-file-text-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-primary">Annual Reports</h3>
+                                            <p class="text-sm text-gray-600">Comprehensive yearly financial reports</p>
+                                        </div>
+                                    </div>
+                                    <button class="text-secondary hover:text-yellow-600">
+                                        <i class="ri-arrow-right-line text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-lg">
+                                            <i class="ri-bar-chart-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-primary">Quarterly Results</h3>
+                                            <p class="text-sm text-gray-600">Latest quarterly financial performance</p>
+                                        </div>
+                                    </div>
+                                    <button class="text-secondary hover:text-yellow-600">
+                                        <i class="ri-arrow-right-line text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-lg">
+                                            <i class="ri-shield-check-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-primary">Compliance Documents</h3>
+                                            <p class="text-sm text-gray-600">Regulatory filings and disclosures</p>
+                                        </div>
+                                    </div>
+                                    <button class="text-secondary hover:text-yellow-600">
+                                        <i class="ri-arrow-right-line text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-lg">
+                                            <i class="ri-presentation-line text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="font-semibold text-primary">Investor Presentations</h3>
+                                            <p class="text-sm text-gray-600">Strategic updates and market insights</p>
+                                        </div>
+                                    </div>
+                                    <button class="text-secondary hover:text-yellow-600">
+                                        <i class="ri-arrow-right-line text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investor Relations Contact -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-primary mb-4">
+                    Looking for more details?
+                </h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    Contact our investor relations team for additional information and support.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg">
+                        <div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-lg mx-auto mb-4">
+                            <i class="ri-mail-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Email Us</h3>
+                        <p class="text-gray-600 mb-4">investors@hicom.in</p>
+                        <button class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-gray-800 transition-colors whitespace-nowrap">
+                            Send Email
+                        </button>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg">
+                        <div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-lg mx-auto mb-4">
+                            <i class="ri-phone-line text-2xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Call Us</h3>
+                        <p class="text-gray-600 mb-4">+91 22 4567 8900</p>
+                        <button class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-gray-800 transition-colors whitespace-nowrap">
+                            Call Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Get answers to common questions</p>
+            </div>
+            <div class="space-y-4">
+                <div class="faq-item border border-gray-200 rounded-lg">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50">
+                        <span class="font-semibold text-primary">What is the company culture like at HICOM?</span>
+                        <i class="ri-arrow-down-s-line text-xl text-gray-400"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                        <p>HICOM fosters an innovative, collaborative environment where creativity and professional growth are encouraged. We value diversity, work-life balance, and continuous learning.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-lg">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50">
+                        <span class="font-semibold text-primary">What is the interview process?</span>
+                        <i class="ri-arrow-down-s-line text-xl text-gray-400"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                        <p>Our interview process typically includes an initial screening call, technical assessment, team interviews, and final discussion with leadership. The entire process usually takes 2-3 weeks.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-lg">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-gray-50">
+                        <span class="font-semibold text-primary">What benefits do you offer?</span>
+                        <i class="ri-arrow-down-s-line text-xl text-gray-400"></i>
+                    </button>
+                    <div class="faq-answer hidden p-6 pt-0 text-gray-600">
+                        <p>We offer comprehensive health insurance, flexible work arrangements, professional development opportunities, performance bonuses, and various wellness programs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="text-secondary text-2xl font-['Pacifico'] mb-4">HICOM</div>
+                    <p class="text-gray-300 mb-6">
+                        Transforming internet and IT solutions for enterprises across India with cutting-edge technology and exceptional service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-lg hover:bg-secondary hover:text-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-lg hover:bg-secondary hover:text-primary transition-colors">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-700 rounded-lg hover:bg-secondary hover:text-primary transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-secondary transition-colors">Internet Solutions</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Cloud Services</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Network Infrastructure</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">IT Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" class="hover:text-secondary transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">Investors</a></li>
+                        <li><a href="#" class="hover:text-secondary transition-colors">News & Media</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center gap-2">
+                            <i class="ri-phone-line"></i>
+                            +91 22 4567 8900
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="ri-mail-line"></i>
+                            info@hicom.in
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="ri-map-pin-line mt-1"></i>
+                            <span>Mumbai, Maharashtra<br>India</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2024 HICOM. All rights reserved.</p>
+                <div class="flex space-x-6 text-sm text-gray-400 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-secondary transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-secondary transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-secondary transition-colors">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script id="tab-switching">
+        document.addEventListener('DOMContentLoaded', function() {
+            const careersTab = document.getElementById('careersTab');
+            const investorsTab = document.getElementById('investorsTab');
+            const careersHero = document.getElementById('careersHero');
+            const investorsHero = document.getElementById('investorsHero');
+            const careersContent = document.getElementById('careersContent');
+            const investorsContent = document.getElementById('investorsContent');
+
+            function showCareers() {
+                careersTab.classList.add('active');
+                investorsTab.classList.remove('active');
+                careersTab.classList.add('text-primary', 'border-secondary');
+                careersTab.classList.remove('text-gray-600', 'border-transparent');
+                investorsTab.classList.add('text-gray-600', 'border-transparent');
+                investorsTab.classList.remove('text-primary', 'border-secondary');
+                
+                careersHero.classList.remove('hidden');
+                investorsHero.classList.add('hidden');
+                careersContent.classList.remove('hidden');
+                investorsContent.classList.add('hidden');
+            }
+
+            function showInvestors() {
+                investorsTab.classList.add('active');
+                careersTab.classList.remove('active');
+                investorsTab.classList.add('text-primary', 'border-secondary');
+                investorsTab.classList.remove('text-gray-600', 'border-transparent');
+                careersTab.classList.add('text-gray-600', 'border-transparent');
+                careersTab.classList.remove('text-primary', 'border-secondary');
+                
+                investorsHero.classList.remove('hidden');
+                careersHero.classList.add('hidden');
+                investorsContent.classList.remove('hidden');
+                careersContent.classList.add('hidden');
+            }
+
+            careersTab.addEventListener('click', showCareers);
+            investorsTab.addEventListener('click', showInvestors);
+        });
+    </script>
+
+    <script id="faq-accordion">
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+
+                question.addEventListener('click', () => {
+                    const isOpen = !answer.classList.contains('hidden');
+
+                    faqItems.forEach(otherItem => {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        const otherIcon = otherItem.querySelector('.faq-question i');
+                        otherAnswer.classList.add('hidden');
+                        otherIcon.classList.remove('ri-arrow-up-s-line');
+                        otherIcon.classList.add('ri-arrow-down-s-line');
+                    });
+
+                    if (!isOpen) {
+                        answer.classList.remove('hidden');
+                        icon.classList.remove('ri-arrow-down-s-line');
+                        icon.classList.add('ri-arrow-up-s-line');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="scroll-animations">
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.value-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
