@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TechVision Solutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFB800',
+                        secondary: '#0B1F3A'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body { font-family: 'Inter', sans-serif; }
+        .parallax { transform: translateY(var(--scroll-y, 0)); }
+        .fade-in { opacity: 0; transform: translateY(2rem); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .counter { font-variant-numeric: tabular-nums; }
+        .timeline-item { position: relative; }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #FFB800;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(255, 184, 0, 0.2);
+        }
+        .timeline-line {
+            position: absolute;
+            left: -1rem;
+            top: 1.5rem;
+            bottom: -1rem;
+            width: 2px;
+            background: linear-gradient(to bottom, #FFB800, rgba(255, 184, 0, 0.3));
+        }
+        .team-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .team-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 20px 40px rgba(255, 184, 0, 0.2);
+            border-color: #FFB800;
+        }
+        .value-card {
+            transition: all 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-0.25rem);
+            background: rgba(255, 184, 0, 0.05);
+        }
+        .map-pin {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #FFB800, #FFA000);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, #FFA000, #FF8F00);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 184, 0, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-secondary text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-secondary/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-['Pacifico'] text-primary">logo</div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-white/80 hover:text-primary transition-colors">Home</a>
+                    <a href="#" class="text-primary">About</a>
+                    <a href="#" class="text-white/80 hover:text-primary transition-colors">Services</a>
+                    <a href="#" class="text-white/80 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden w-8 h-8 flex items-center justify-center">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 parallax" style="background-image: url('https://readdy.ai/api/search-image?query=Professional%20technology%20team%20working%20together%20in%20modern%20office%20environment%20with%20sleek%20computers%20and%20collaborative%20workspace%2C%20dark%20navy%20blue%20and%20gold%20lighting%2C%20premium%20corporate%20atmosphere%2C%20high-tech%20equipment%2C%20diverse%20professionals%2C%20modern%20architecture&width=1920&height=1080&seq=hero-team&orientation=landscape'); background-size: cover; background-position: center;"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/70 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+            <div class="max-w-3xl">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 fade-in">
+                    Empowering Industries Through 
+                    <span class="text-primary">Technology</span>
+                </h1>
+                <p class="text-xl text-white/80 mb-8 fade-in">
+                    We transform businesses with cutting-edge solutions, driving innovation across industries for over two decades.
+                </p>
+                <button class="cta-button text-secondary font-semibold px-8 py-4 !rounded-button whitespace-nowrap fade-in">
+                    Discover Our Journey
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="py-20 bg-gradient-to-b from-secondary to-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold mb-8">Our Story</h2>
+                    <div class="space-y-6 text-white/80 text-lg leading-relaxed">
+                        <p>
+                            Founded in 2001, TechVision Solutions began as a small team of passionate engineers with a vision to revolutionize how businesses leverage technology. What started in a garage has grown into a global powerhouse serving Fortune 500 companies across six continents.
+                        </p>
+                        <p>
+                            Our journey has been marked by continuous innovation, strategic partnerships, and an unwavering commitment to excellence. We've weathered technological shifts, adapted to market changes, and consistently delivered solutions that drive real business value.
+                        </p>
+                        <p>
+                            Today, we stand at the forefront of digital transformation, helping organizations navigate the complexities of modern technology while building sustainable, scalable solutions for tomorrow's challenges.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative fade-in">
+                    <div class="space-y-8">
+                        <div class="timeline-item pl-8">
+                            <div class="timeline-line"></div>
+                            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
+                                <h3 class="text-primary font-semibold text-lg mb-2">2001 - Foundation</h3>
+                                <p class="text-white/70">Started with 3 engineers and a revolutionary idea</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item pl-8">
+                            <div class="timeline-line"></div>
+                            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
+                                <h3 class="text-primary font-semibold text-lg mb-2">2008 - Global Expansion</h3>
+                                <p class="text-white/70">Opened offices in London, Tokyo, and Singapore</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item pl-8">
+                            <div class="timeline-line"></div>
+                            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
+                                <h3 class="text-primary font-semibold text-lg mb-2">2015 - AI Integration</h3>
+                                <p class="text-white/70">Pioneered AI-driven business solutions</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item pl-8">
+                            <div class="bg-white/5 p-6 rounded-lg border border-white/10">
+                                <h3 class="text-primary font-semibold text-lg mb-2">2024 - Industry Leader</h3>
+                                <p class="text-white/70">Serving 500+ global enterprises</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-6">Leadership Team</h2>
+                <p class="text-xl text-white/70 max-w-3xl mx-auto">
+                    Meet the visionaries driving our mission forward with decades of combined experience in technology and business innovation.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="team-card bg-white/5 p-8 rounded-xl border border-white/10 text-center fade-in">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Professional%20CEO%20portrait%20of%20confident%20middle-aged%20business%20leader%20in%20premium%20suit%2C%20clean%20corporate%20headshot%20style%2C%20neutral%20background%2C%20executive%20presence%2C%20leadership%20qualities&width=200&height=200&seq=ceo-portrait&orientation=squarish" alt="CEO" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Michael Richardson</h3>
+                    <p class="text-primary mb-4">Chief Executive Officer</p>
+                    <p class="text-white/70 text-sm">Leading digital transformation initiatives across Fortune 500 companies for over 15 years.</p>
+                </div>
+                <div class="team-card bg-white/5 p-8 rounded-xl border border-white/10 text-center fade-in">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Professional%20CTO%20portrait%20of%20innovative%20technology%20leader%2C%20modern%20business%20attire%2C%20confident%20expression%2C%20tech%20industry%20executive%2C%20clean%20corporate%20photography%20style&width=200&height=200&seq=cto-portrait&orientation=squarish" alt="CTO" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Sarah Chen</h3>
+                    <p class="text-primary mb-4">Chief Technology Officer</p>
+                    <p class="text-white/70 text-sm">Pioneering AI and machine learning solutions with 20+ years in enterprise technology.</p>
+                </div>
+                <div class="team-card bg-white/5 p-8 rounded-xl border border-white/10 text-center fade-in">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden">
+                        <img src="https://readdy.ai/api/search-image?query=Professional%20COO%20portrait%20of%20experienced%20operations%20executive%2C%20business%20professional%20attire%2C%20leadership%20presence%2C%20corporate%20headshot%20style%2C%20neutral%20clean%20background&width=200&height=200&seq=coo-portrait&orientation=squarish" alt="COO" class="w-full h-full object-cover object-top">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">David Kumar</h3>
+                    <p class="text-primary mb-4">Chief Operating Officer</p>
+                    <p class="text-white/70 text-sm">Scaling operations globally while maintaining excellence in service delivery and innovation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, Vision & Values -->
+    <section class="py-20 bg-gradient-to-b from-slate-900 to-secondary">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-6">Our Foundation</h2>
+                <p class="text-xl text-white/70 max-w-3xl mx-auto">
+                    Built on principles that guide every decision and drive every innovation.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="value-card bg-white/5 p-8 rounded-xl border border-white/10 text-center fade-in">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-primary/20 rounded-full">
+                        <i class="ri-rocket-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Mission</h3>
+                    <p class="text-white/70 leading-relaxed">
+                        To empower businesses worldwide with innovative technology solutions that drive growth, efficiency, and sustainable success in the digital age.
+                    </p>
+                </div>
+                <div class="value-card bg-white/5 p-8 rounded-xl border border-white/10 text-center fade-in">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-primary/20 rounded-full">
+                        <i class="ri-eye-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Vision</h3>
+                    <p class="text-white/70 leading-relaxed">
+                        To be the global leader in transformative technology solutions, creating a future where innovation seamlessly integrates with human potential.
+                    </p>
+                </div>
+                <div class="value-card bg-white/5 p-8 rounded-xl border border-white/10 text-center fade-in">
+                    <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-primary/20 rounded-full">
+                        <i class="ri-heart-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Values</h3>
+                    <p class="text-white/70 leading-relaxed">
+                        Excellence, integrity, innovation, and collaboration form the cornerstone of everything we do, ensuring lasting partnerships and meaningful impact.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="py-20 bg-secondary">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary/20 rounded-full">
+                        <i class="ri-building-line text-2xl text-primary"></i>
+                    </div>
+                    <div class="counter text-4xl font-bold text-primary mb-2" data-target="500">0</div>
+                    <p class="text-white/70">Global Clients</p>
+                </div>
+                <div class="fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary/20 rounded-full">
+                        <i class="ri-team-line text-2xl text-primary"></i>
+                    </div>
+                    <div class="counter text-4xl font-bold text-primary mb-2" data-target="1200">0</div>
+                    <p class="text-white/70">Team Members</p>
+                </div>
+                <div class="fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary/20 rounded-full">
+                        <i class="ri-global-line text-2xl text-primary"></i>
+                    </div>
+                    <div class="counter text-4xl font-bold text-primary mb-2" data-target="45">0</div>
+                    <p class="text-white/70">Countries Served</p>
+                </div>
+                <div class="fade-in">
+                    <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-primary/20 rounded-full">
+                        <i class="ri-award-line text-2xl text-primary"></i>
+                    </div>
+                    <div class="counter text-4xl font-bold text-primary mb-2" data-target="23">0</div>
+                    <p class="text-white/70">Years of Excellence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Global Presence -->
+    <section class="py-20 bg-gradient-to-b from-secondary to-slate-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-6">Global Presence</h2>
+                <p class="text-xl text-white/70 max-w-3xl mx-auto">
+                    With offices and partners across six continents, we deliver localized expertise with global standards.
+                </p>
+            </div>
+            <div class="relative bg-white/5 rounded-2xl p-8 border border-white/10 fade-in">
+                <div class="relative h-96 rounded-xl overflow-hidden" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;">
+                    <div class="absolute inset-0 bg-secondary/60"></div>
+                    <!-- Map Pins -->
+                    <div class="absolute top-1/3 left-1/4 map-pin">
+                        <div class="w-4 h-4 bg-primary rounded-full shadow-lg"></div>
+                        <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-secondary/90 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+                            New York, USA
+                        </div>
+                    </div>
+                    <div class="absolute top-1/4 right-1/3 map-pin">
+                        <div class="w-4 h-4 bg-primary rounded-full shadow-lg"></div>
+                        <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-secondary/90 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+                            London, UK
+                        </div>
+                    </div>
+                    <div class="absolute top-1/3 right-1/4 map-pin">
+                        <div class="w-4 h-4 bg-primary rounded-full shadow-lg"></div>
+                        <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-secondary/90 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+                            Tokyo, Japan
+                        </div>
+                    </div>
+                    <div class="absolute bottom-1/3 right-1/3 map-pin">
+                        <div class="w-4 h-4 bg-primary rounded-full shadow-lg"></div>
+                        <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-secondary/90 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+                            Singapore
+                        </div>
+                    </div>
+                    <div class="absolute bottom-1/4 left-1/3 map-pin">
+                        <div class="w-4 h-4 bg-primary rounded-full shadow-lg"></div>
+                        <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-secondary/90 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity">
+                            Sydney, Australia
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-slate-900 to-secondary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-32 h-32 border border-primary/30 rounded-full"></div>
+            <div class="absolute bottom-20 right-20 w-48 h-48 border border-primary/20 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-primary/10 rounded-full"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <div class="fade-in">
+                <h2 class="text-5xl font-bold mb-6">Let's Build Something Together</h2>
+                <p class="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                    Ready to transform your business with cutting-edge technology? Our team of experts is here to turn your vision into reality.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="cta-button text-secondary font-semibold px-8 py-4 !rounded-button whitespace-nowrap">
+                        Start Your Project
+                    </button>
+                    <button class="border-2 border-primary text-primary font-semibold px-8 py-4 !rounded-button whitespace-nowrap hover:bg-primary hover:text-secondary transition-all">
+                        Schedule Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-['Pacifico'] text-primary mb-4">logo</div>
+                    <p class="text-white/70 text-sm">
+                        Empowering industries through innovative technology solutions since 2001.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <div class="space-y-2 text-sm text-white/70">
+                        <a href="#" class="block hover:text-primary transition-colors">About Us</a>
+                        <a href="#" class="block hover:text-primary transition-colors">Careers</a>
+                        <a href="#" class="block hover:text-primary transition-colors">News</a>
+                        <a href="#" class="block hover:text-primary transition-colors">Investors</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <div class="space-y-2 text-sm text-white/70">
+                        <a href="#" class="block hover:text-primary transition-colors">Digital Transformation</a>
+                        <a href="#" class="block hover:text-primary transition-colors">AI Solutions</a>
+                        <a href="#" class="block hover:text-primary transition-colors">Cloud Services</a>
+                        <a href="#" class="block hover:text-primary transition-colors">Consulting</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary/20 transition-colors">
+                            <i class="ri-linkedin-fill text-primary"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary/20 transition-colors">
+                            <i class="ri-twitter-fill text-primary"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full hover:bg-primary/20 transition-colors">
+                            <i class="ri-facebook-fill text-primary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/60">
+                <p>&copy; 2024 TechVision Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="parallax-scroll">
+        document.addEventListener('DOMContentLoaded', function() {
+            let ticking = false;
+            
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.parallax');
+                
+                parallaxElements.forEach(element => {
+                    const speed = 0.5;
+                    element.style.setProperty('--scroll-y', `${scrolled * speed}px`);
+                });
+                
+                ticking = false;
+            }
+            
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', requestTick);
+        });
+    </script>
+
+    <script id="fade-in-animation">
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+    <script id="counter-animation">
+        document.addEventListener('DOMContentLoaded', function() {
+            function animateCounter(element) {
+                const target = parseInt(element.dataset.target);
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(current).toLocaleString();
+                }, 16);
+            }
+            
+            const counterObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                        counterObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('.counter').forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        });
+    </script>
+
+    <script id="team-card-interactions">
+        document.addEventListener('DOMContentLoaded', function() {
+            const teamCards = document.querySelectorAll('.team-card');
+            
+            teamCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const isExpanded = this.classList.contains('expanded');
+                    
+                    teamCards.forEach(c => c.classList.remove('expanded'));
+                    
+                    if (!isExpanded) {
+                        this.classList.add('expanded');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

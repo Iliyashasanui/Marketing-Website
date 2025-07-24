@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechConnect ISP - Fast. Secure. Reliable.</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#1e3a8a',
+secondary: '#fbbf24'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+},
+fontFamily: {
+'sans': ['Inter', 'sans-serif']
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+.gradient-bg {
+background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3730a3 100%);
+}
+.hero-overlay {
+background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 64, 175, 0.8) 50%, rgba(55, 48, 163, 0.9) 100%);
+}
+.counter-animation {
+transition: all 0.3s ease;
+}
+.fade-in {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s ease;
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+.card-hover {
+transition: all 0.3s ease;
+}
+.card-hover:hover {
+transform: translateY(-8px);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+.icon-scale {
+transition: transform 0.3s ease;
+}
+.icon-scale:hover {
+transform: scale(1.1);
+}
+.sticky-header {
+transition: all 0.3s ease;
+}
+.sticky-header.scrolled {
+background: rgba(30, 58, 138, 0.95);
+backdrop-filter: blur(10px);
+}
+</style>
+</head>
+<body class="font-sans">
+<!-- Header -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 sticky-header">
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+<div class="font-['Pacifico'] text-2xl text-white">logo</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#" class="text-white hover:text-secondary transition-colors">Home</a>
+<a href="#" class="text-white hover:text-secondary transition-colors">Services</a>
+<a href="#" class="text-white hover:text-secondary transition-colors">Industries</a>
+<a href="#" class="text-white hover:text-secondary transition-colors">About</a>
+<a href="#" class="text-white hover:text-secondary transition-colors">Contact</a>
+</nav>
+<button class="bg-secondary text-primary px-6 py-2 !rounded-button font-semibold hover:bg-yellow-300 transition-colors whitespace-nowrap">
+Get Quote
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20technology%20globe%20with%20network%20connections%20and%20professional%20engineer%20working%20on%20laptop%20in%20corporate%20office%20environment%2C%20dark%20blue%20gradient%20background%2C%20high-tech%20atmosphere%2C%20professional%20lighting%2C%20clean%20minimal%20design%2C%20left%20side%20dark%20gradient%20for%20text%20overlay&width=1920&height=1080&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 hero-overlay"></div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+<div class="max-w-3xl">
+<h1 class="text-6xl md:text-7xl font-black text-white mb-6 leading-tight">
+Fast. Secure. <span class="text-secondary">Reliable.</span>
+</h1>
+<p class="text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl">
+Empowering businesses with cutting-edge ISP solutions, managed IT services, and telecom infrastructure. Your trusted technology partner for digital transformation.
+</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-secondary text-primary px-8 py-4 !rounded-button font-bold text-lg hover:bg-yellow-300 transition-colors whitespace-nowrap">
+Get in Touch
+</button>
+<button class="border-2 border-white text-white px-8 py-4 !rounded-button font-semibold text-lg hover:bg-white hover:text-primary transition-colors whitespace-nowrap">
+Know Our Bundle
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Client Logos -->
+<section class="py-12 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<p class="text-center text-gray-600 mb-8 text-lg">Trusted by Industry Leaders</p>
+<div class="flex items-center justify-center space-x-12 opacity-60">
+<div class="flex items-center space-x-2 hover:opacity-100 transition-opacity">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-microsoft-fill text-2xl text-gray-700"></i>
+</div>
+<span class="text-xl font-semibold text-gray-700">Microsoft</span>
+</div>
+<div class="flex items-center space-x-2 hover:opacity-100 transition-opacity">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-amazon-fill text-2xl text-gray-700"></i>
+</div>
+<span class="text-xl font-semibold text-gray-700">Amazon</span>
+</div>
+<div class="flex items-center space-x-2 hover:opacity-100 transition-opacity">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-google-fill text-2xl text-gray-700"></i>
+</div>
+<span class="text-xl font-semibold text-gray-700">Google</span>
+</div>
+<div class="flex items-center space-x-2 hover:opacity-100 transition-opacity">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-apple-fill text-2xl text-gray-700"></i>
+</div>
+<span class="text-xl font-semibold text-gray-700">Apple</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Business Verticals -->
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Our Business Verticals</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Comprehensive technology solutions tailored for modern business needs</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white rounded-xl p-8 shadow-lg card-hover border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center bg-primary rounded-xl mb-6 icon-scale">
+<i class="ri-wifi-line text-2xl text-white"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4">ISP Services</h3>
+<p class="text-gray-600 mb-6 leading-relaxed">High-speed internet connectivity solutions with 99.9% uptime guarantee for businesses of all sizes.</p>
+<a href="#" class="text-primary font-semibold hover:text-blue-800 transition-colors">Learn More →</a>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-lg card-hover border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center bg-primary rounded-xl mb-6 icon-scale">
+<i class="ri-settings-3-line text-2xl text-white"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4">IT Managed Services</h3>
+<p class="text-gray-600 mb-6 leading-relaxed">Complete IT infrastructure management, cloud solutions, and 24/7 technical support services.</p>
+<a href="#" class="text-primary font-semibold hover:text-blue-800 transition-colors">Learn More →</a>
+</div>
+<div class="bg-white rounded-xl p-8 shadow-lg card-hover border border-gray-100">
+<div class="w-16 h-16 flex items-center justify-center bg-primary rounded-xl mb-6 icon-scale">
+<i class="ri-phone-line text-2xl text-white"></i>
+</div>
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Telecom Solutions</h3>
+<p class="text-gray-600 mb-6 leading-relaxed">Advanced telecommunications infrastructure and unified communication systems for enterprises.</p>
+<a href="#" class="text-primary font-semibold hover:text-blue-800 transition-colors">Learn More →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Achievement Counter -->
+<section class="py-20 gradient-bg relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-10 left-10 w-32 h-32 border border-white rounded-full"></div>
+<div class="absolute bottom-10 right-10 w-24 h-24 border border-white rounded-full"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-8 text-center">
+<div class="fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-full mx-auto mb-4">
+<i class="ri-links-line text-2xl text-primary"></i>
+</div>
+<div class="text-4xl font-bold text-white mb-2 counter" data-target="3000">0</div>
+<p class="text-gray-200 text-lg">Live Links</p>
+</div>
+<div class="fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-full mx-auto mb-4">
+<i class="ri-calendar-line text-2xl text-primary"></i>
+</div>
+<div class="text-4xl font-bold text-white mb-2 counter" data-target="13">0</div>
+<p class="text-gray-200 text-lg">Years Experience</p>
+</div>
+<div class="fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-full mx-auto mb-4">
+<i class="ri-trophy-line text-2xl text-primary"></i>
+</div>
+<div class="text-4xl font-bold text-white mb-2 counter" data-target="99">0</div>
+<p class="text-gray-200 text-lg">Success Rate %</p>
+</div>
+<div class="fade-in">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-full mx-auto mb-4">
+<i class="ri-global-line text-2xl text-primary"></i>
+</div>
+<div class="text-4xl font-bold text-white mb-2 counter" data-target="25">0</div>
+<p class="text-gray-200 text-lg">Countries Served</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Industry Applications -->
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Industry Applications</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Specialized solutions across diverse industry sectors</p>
+</div>
+<div class="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
+<div class="relative rounded-xl overflow-hidden card-hover group">
+<div class="h-64" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20logistics%20warehouse%20with%20automated%20systems%20and%20digital%20technology%2C%20clean%20professional%20environment%2C%20blue%20and%20orange%20color%20scheme%2C%20high-tech%20atmosphere&width=400&height=300&seq=logistics1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-lg mb-3">
+<i class="ri-truck-line text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Logistics & Supply Chain</h3>
+<p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity">Real-time tracking and inventory management solutions</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden card-hover group">
+<div class="h-64" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20healthcare%20facility%20with%20digital%20medical%20equipment%20and%20technology%2C%20clean%20sterile%20environment%2C%20blue%20and%20white%20color%20scheme%2C%20professional%20medical%20atmosphere&width=400&height=300&seq=healthcare1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-lg mb-3">
+<i class="ri-heart-pulse-line text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Healthcare</h3>
+<p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity">Secure patient data management and telemedicine platforms</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden card-hover group">
+<div class="h-64" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20financial%20trading%20floor%20with%20multiple%20monitors%20and%20digital%20displays%2C%20professional%20business%20environment%2C%20blue%20and%20gold%20color%20scheme%2C%20high-tech%20atmosphere&width=400&height=300&seq=finance1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-lg mb-3">
+<i class="ri-bank-line text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Financial Services</h3>
+<p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity">High-security trading platforms and payment processing</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden card-hover group">
+<div class="h-64" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20manufacturing%20facility%20with%20robotic%20automation%20and%20digital%20control%20systems%2C%20industrial%20environment%2C%20blue%20and%20orange%20color%20scheme%2C%20high-tech%20production%20line&width=400&height=300&seq=manufacturing1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-lg mb-3">
+<i class="ri-settings-4-line text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Manufacturing</h3>
+<p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity">IoT-enabled production monitoring and quality control</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden card-hover group">
+<div class="h-64" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20educational%20classroom%20with%20digital%20learning%20technology%20and%20interactive%20displays%2C%20bright%20learning%20environment%2C%20blue%20and%20green%20color%20scheme%2C%20students%20with%20laptops&width=400&height=300&seq=education1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-lg mb-3">
+<i class="ri-graduation-cap-line text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Education</h3>
+<p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity">Digital learning platforms and campus connectivity solutions</p>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden card-hover group">
+<div class="h-64" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20retail%20store%20with%20digital%20payment%20systems%20and%20inventory%20management%20technology%2C%20contemporary%20shopping%20environment%2C%20blue%20and%20white%20color%20scheme%2C%20clean%20design&width=400&height=300&seq=retail1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 right-0 p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-secondary rounded-lg mb-3">
+<i class="ri-shopping-bag-line text-xl text-primary"></i>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Retail & E-commerce</h3>
+<p class="text-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-opacity">Omnichannel solutions and customer experience platforms</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Core Strengths -->
+<section class="py-20 gradient-bg">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-white mb-4">Core Strengths</h2>
+<p class="text-xl text-gray-200 max-w-3xl mx-auto">What sets us apart in the competitive technology landscape</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 card-hover">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-full mb-6 icon-scale">
+<i class="ri-rocket-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">Fast Delivery</h3>
+<p class="text-gray-200 leading-relaxed">Rapid deployment and implementation with industry-leading turnaround times for all our services.</p>
+</div>
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 card-hover">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-full mb-6 icon-scale">
+<i class="ri-shield-check-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">Service Guarantee</h3>
+<p class="text-gray-200 leading-relaxed">99.9% uptime guarantee with comprehensive SLA coverage and 24/7 monitoring support.</p>
+</div>
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 card-hover">
+<div class="w-16 h-16 flex items-center justify-center bg-secondary rounded-full mb-6 icon-scale">
+<i class="ri-price-tag-3-line text-2xl text-primary"></i>
+</div>
+<h3 class="text-2xl font-bold text-white mb-4">Affordable Solutions</h3>
+<p class="text-gray-200 leading-relaxed">Cost-effective packages tailored to your budget without compromising on quality or performance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Highlights -->
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Project Highlights</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Successful implementations across major enterprises</p>
+</div>
+<div class="relative">
+<div id="projectSlider" class="flex transition-transform duration-500 ease-in-out">
+<div class="min-w-full md:min-w-[33.333%] px-4">
+<div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+<div class="h-48" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20Shell%20gas%20station%20with%20digital%20payment%20systems%20and%20fuel%20management%20technology%2C%20clean%20corporate%20environment%2C%20Shell%20brand%20colors%2C%20professional%20lighting&width=400&height=200&seq=shell1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-gas-station-fill text-2xl text-orange-500"></i>
+</div>
+<span class="ml-2 text-lg font-semibold">Shell Pumps</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-3">Fuel Management System</h3>
+<p class="text-gray-600 mb-4">Implemented comprehensive digital fuel management and payment processing system across 200+ locations.</p>
+<div class="text-sm text-gray-500">
+<span class="font-semibold">Results:</span> 40% efficiency improvement
+</div>
+</div>
+</div>
+</div>
+<div class="min-w-full md:min-w-[33.333%] px-4">
+<div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+<div class="h-48" style="background-image: url('https://readdy.ai/api/search-image?query=BSNL%20telecommunications%20infrastructure%20with%20network%20towers%20and%20digital%20communication%20equipment%2C%20Indian%20telecom%20environment%2C%20blue%20and%20orange%20colors%2C%20professional%20setup&width=400&height=200&seq=bsnl1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-signal-tower-fill text-2xl text-blue-600"></i>
+</div>
+<span class="ml-2 text-lg font-semibold">BSNL</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-3">Network Infrastructure</h3>
+<p class="text-gray-600 mb-4">Upgraded telecommunications infrastructure with fiber optic networks and 5G-ready equipment installation.</p>
+<div class="text-sm text-gray-500">
+<span class="font-semibold">Results:</span> 300% speed improvement
+</div>
+</div>
+</div>
+</div>
+<div class="min-w-full md:min-w-[33.333%] px-4">
+<div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+<div class="h-48" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20banking%20data%20center%20with%20servers%20and%20network%20equipment%2C%20secure%20financial%20technology%20environment%2C%20blue%20and%20silver%20colors%2C%20professional%20corporate%20setting&width=400&height=200&seq=bank1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-bank-fill text-2xl text-green-600"></i>
+</div>
+<span class="ml-2 text-lg font-semibold">Metro Bank</span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 mb-3">Core Banking Solution</h3>
+<p class="text-gray-600 mb-4">Deployed secure cloud-based banking infrastructure with real-time transaction processing capabilities.</p>
+<div class="text-sm text-gray-500">
+<span class="font-semibold">Results:</span> 99.99% uptime achieved
+</div>
+</div>
+</div>
+</div>
+</div>
+<button id="prevProject" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-arrow-left-line text-xl text-gray-600"></i>
+</div>
+</button>
+<button id="nextProject" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-colors">
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-arrow-right-line text-xl text-gray-600"></i>
+</div>
+</button>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Client Testimonials</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">What our clients say about our services</p>
+</div>
+<div class="relative max-w-4xl mx-auto">
+<div id="testimonialSlider" class="flex transition-transform duration-500 ease-in-out">
+<div class="min-w-full px-4">
+<div class="bg-white rounded-xl p-8 shadow-lg text-center">
+<div class="w-20 h-20 rounded-full mx-auto mb-6" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20business%20executive%20headshot%2C%20middle-aged%20man%20in%20suit%2C%20corporate%20portrait%2C%20clean%20background%2C%20professional%20lighting&width=80&height=80&seq=person1&orientation=squarish'); background-size: cover; background-position: center;"></div>
+<blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+"TechConnect transformed our entire IT infrastructure. Their managed services have been exceptional, and the 24/7 support gives us complete peace of mind."
+</blockquote>
+<div class="text-lg font-semibold text-gray-900">Michael Richardson</div>
+<div class="text-gray-600">CTO, GlobalTech Solutions</div>
+<div class="flex items-center justify-center mt-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-building-fill text-xl text-gray-400"></i>
+</div>
+<span class="ml-2 text-gray-500">GlobalTech</span>
+</div>
+</div>
+</div>
+<div class="min-w-full px-4">
+<div class="bg-white rounded-xl p-8 shadow-lg text-center">
+<div class="w-20 h-20 rounded-full mx-auto mb-6" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20business%20woman%20executive%20headshot%2C%20confident%20female%20leader%20in%20business%20attire%2C%20corporate%20portrait%2C%20clean%20background%2C%20professional%20lighting&width=80&height=80&seq=person2&orientation=squarish'); background-size: cover; background-position: center;"></div>
+<blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+"The ISP services provided by TechConnect have been game-changing for our operations. Lightning-fast speeds and zero downtime in the past year."
+</blockquote>
+<div class="text-lg font-semibold text-gray-900">Sarah Chen</div>
+<div class="text-gray-600">Operations Director, DataFlow Inc</div>
+<div class="flex items-center justify-center mt-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-database-fill text-xl text-gray-400"></i>
+</div>
+<span class="ml-2 text-gray-500">DataFlow</span>
+</div>
+</div>
+</div>
+<div class="min-w-full px-4">
+<div class="bg-white rounded-xl p-8 shadow-lg text-center">
+<div class="w-20 h-20 rounded-full mx-auto mb-6" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20business%20executive%20headshot%2C%20senior%20manager%20in%20formal%20attire%2C%20corporate%20portrait%2C%20clean%20background%2C%20professional%20lighting&width=80&height=80&seq=person3&orientation=squarish'); background-size: cover; background-position: center;"></div>
+<blockquote class="text-xl text-gray-700 mb-6 italic leading-relaxed">
+"Their telecom solutions have revolutionized our communication systems. The unified platform has improved our team collaboration significantly."
+</blockquote>
+<div class="text-lg font-semibold text-gray-900">David Kumar</div>
+<div class="text-gray-600">IT Manager, Enterprise Solutions Ltd</div>
+<div class="flex items-center justify-center mt-4">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-building-2-fill text-xl text-gray-400"></i>
+</div>
+<span class="ml-2 text-gray-500">Enterprise Solutions</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-8 space-x-2">
+<button class="testimonial-dot w-3 h-3 rounded-full bg-primary transition-colors" data-slide="0"></button>
+<button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="1"></button>
+<button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors" data-slide="2"></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Articles -->
+<section class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Latest Articles</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Stay updated with the latest technology trends and insights</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+<div class="h-48" style="background-image: url('https://readdy.ai/api/search-image?query=5G%20network%20technology%20infrastructure%20with%20modern%20telecommunications%20equipment%20and%20digital%20connectivity%2C%20futuristic%20tech%20environment%2C%20blue%20and%20white%20colors%2C%20professional%20tech%20article%20illustration&width=400&height=200&seq=article1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="text-sm text-primary font-semibold mb-2">Technology</div>
+<h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary transition-colors">
+<a href="#">The Future of 5G Networks in Enterprise Communications</a>
+</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Exploring how 5G technology is revolutionizing business communications and enabling new possibilities for remote work and IoT integration.</p>
+<a href="#" class="text-primary font-semibold hover:text-blue-800 transition-colors">Read More →</a>
+</div>
+</article>
+<article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+<div class="h-48" style="background-image: url('https://readdy.ai/api/search-image?query=cloud%20computing%20security%20with%20servers%20and%20digital%20protection%20shields%2C%20cybersecurity%20concept%2C%20blue%20and%20green%20colors%2C%20professional%20tech%20article%20illustration&width=400&height=200&seq=article2&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="text-sm text-primary font-semibold mb-2">Security</div>
+<h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary transition-colors">
+<a href="#">Cloud Security Best Practices for Modern Businesses</a>
+</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">Essential security measures and protocols that every business should implement when migrating to cloud-based infrastructure solutions.</p>
+<a href="#" class="text-primary font-semibold hover:text-blue-800 transition-colors">Read More →</a>
+</div>
+</article>
+<article class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+<div class="h-48" style="background-image: url('https://readdy.ai/api/search-image?query=IoT%20devices%20and%20smart%20city%20infrastructure%20with%20connected%20sensors%20and%20data%20visualization%2C%20modern%20technology%20environment%2C%20blue%20and%20orange%20colors%2C%20professional%20tech%20article%20illustration&width=400&height=200&seq=article3&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="text-sm text-primary font-semibold mb-2">Innovation</div>
+<h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-primary transition-colors">
+<a href="#">IoT Integration: Transforming Traditional Industries</a>
+</h3>
+<p class="text-gray-600 mb-4 leading-relaxed">How Internet of Things technology is reshaping manufacturing, healthcare, and logistics through smart sensors and real-time data analytics.</p>
+<a href="#" class="text-primary font-semibold hover:text-blue-800 transition-colors">Read More →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Contact Form -->
+<section class="py-20 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+<p class="text-xl text-gray-600 max-w-3xl mx-auto">Get in touch with our team for personalized solutions</p>
+</div>
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<div class="space-y-8">
+<div class="bg-white rounded-xl p-6 shadow-lg">
+<h3 class="text-xl font-bold text-gray-900 mb-4">Registered Office</h3>
+<div class="flex items-start space-x-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-building-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-700">HCIN Networks Ltd.</p>
+<p class="text-gray-600">524, 5th Floor DLF Star tower, Sector 30,</p>
+<p class="text-gray-600">Gurugram, Haryana 122022</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-lg">
+<h3 class="text-xl font-bold text-gray-900 mb-4">Corporate Office</h3>
+<div class="flex items-start space-x-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-building-2-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-700">HCIN Networks Ltd.</p>
+<p class="text-gray-600">2nd floor, 'Parekh Towers. 6, 15th Cross,</p>
+<p class="text-gray-600">Outer Ring Rd, 6th Phase, J. P. Nagar,</p>
+<p class="text-gray-600">Bengaluru, Karnataka 560078</p>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-xl p-6 shadow-lg">
+<h3 class="text-xl font-bold text-gray-900 mb-4">Branch Office</h3>
+<div class="flex items-start space-x-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-building-4-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-700">HCIN Networks Ltd.</p>
+<p class="text-gray-600">4th Floor, Urbtech Trade Center,</p>
+<p class="text-gray-600">1904, Block IS-19, Sector 132,</p>
+<p class="text-gray-600">Noida, Uttar Pradesh 201301</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<form class="bg-white rounded-xl p-8 shadow-lg">
+<div class="space-y-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+<input type="text" id="name" name="name" placeholder="Jane Smith" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" required>
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+<input type="email" id="email" name="email" placeholder="example@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" required>
+</div>
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+<input type="tel" id="phone" name="phone" placeholder="Your phone number" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" required>
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+<textarea id="message" name="message" rows="4" placeholder="How can we help you?" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary transition-colors" required></textarea>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-semibold hover:bg-blue-900 transition-colors whitespace-nowrap">
+Send Message
+</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="gradient-bg text-white">
+<div class="max-w-7xl mx-auto px-6 py-16">
+<div class="grid md:grid-cols-4 gap-8 mb-12">
+<div>
+<div class="font-['Pacifico'] text-2xl mb-4">logo</div>
+<p class="text-gray-300 mb-6 leading-relaxed">Leading ISP and IT service provider delivering fast, secure, and reliable technology solutions for modern businesses.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+<i class="ri-facebook-fill text-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+<i class="ri-twitter-fill text-lg"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+<i class="ri-linkedin-fill text-lg"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Our Team</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Careers</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">News & Updates</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Services</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">ISP Solutions</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Managed IT Services</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Telecom Infrastructure</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Cloud Services</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors">Cybersecurity</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+<div class="space-y-3">
+<div class="flex items-start space-x-3">
+<div class="w-5 h-5 flex items-center justify-center mt-1">
+<i class="ri-map-pin-line text-sm"></i>
+</div>
+<span class="text-gray-300">123 Tech Boulevard, Digital City, TC 12345</span>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-phone-line text-sm"></i>
+</div>
+<span class="text-gray-300">+1 (555) 123-4567</span>
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-mail-line text-sm"></i>
+</div>
+<span class="text-gray-300">info@techconnect.com</span>
+</div>
+</div>
+<div class="mt-6">
+<h5 class="font-semibold mb-3">Newsletter</h5>
+<div class="flex">
+<input type="email" placeholder="Your email" class="flex-1 px-4 py-2 rounded-l-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-secondary">
+<button class="bg-secondary text-primary px-4 py-2 rounded-r-lg font-semibold hover:bg-yellow-300 transition-colors whitespace-nowrap">
+Subscribe
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-300 text-sm">© 2025 TechConnect. All rights reserved.</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-visa-fill text-2xl text-gray-300"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-mastercard-fill text-2xl text-gray-300"></i>
+</div>
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-paypal-fill text-2xl text-gray-300"></i>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="header-scroll">
+document.addEventListener('DOMContentLoaded', function() {
+const header = document.getElementById('header');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+header.classList.add('scrolled');
+} else {
+header.classList.remove('scrolled');
+}
+});
+});
+</script>
+<script id="counter-animation">
+document.addEventListener('DOMContentLoaded', function() {
+const counters = document.querySelectorAll('.counter');
+let animated = false;
+function animateCounters() {
+if (animated) return;
+counters.forEach(counter => {
+const target = parseInt(counter.getAttribute('data-target'));
+const increment = target / 100;
+let current = 0;
+const timer = setInterval(() => {
+current += increment;
+if (current >= target) {
+counter.textContent = target + (target === 3000 ? '+' : target === 13 ? '+' : target === 99 ? '%' : '+');
+clearInterval(timer);
+} else {
+counter.textContent = Math.floor(current) + (target === 99 ? '%' : '+');
+}
+}, 20);
+});
+animated = true;
+}
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+animateCounters();
+}
+});
+});
+counters.forEach(counter => {
+observer.observe(counter);
+});
+});
+</script>
+<script id="fade-in-animation">
+document.addEventListener('DOMContentLoaded', function() {
+const fadeElements = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+}, {
+threshold: 0.1
+});
+fadeElements.forEach(element => {
+observer.observe(element);
+});
+});
+</script>
+<script id="project-slider">
+document.addEventListener('DOMContentLoaded', function() {
+const slider = document.getElementById('projectSlider');
+const prevBtn = document.getElementById('prevProject');
+const nextBtn = document.getElementById('nextProject');
+let currentSlide = 0;
+const totalSlides = 3;
+function updateSlider() {
+const translateX = -currentSlide * (100 / totalSlides);
+slider.style.transform = `translateX(${translateX}%)`;
+}
+nextBtn.addEventListener('click', function() {
+currentSlide = (currentSlide + 1) % totalSlides;
+updateSlider();
+});
+prevBtn.addEventListener('click', function() {
+currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+updateSlider();
+});
+setInterval(() => {
+currentSlide = (currentSlide + 1) % totalSlides;
+updateSlider();
+}, 5000);
+});
+</script>
+<script id="testimonial-slider">
+document.addEventListener('DOMContentLoaded', function() {
+const slider = document.getElementById('testimonialSlider');
+const dots = document.querySelectorAll('.testimonial-dot');
+let currentSlide = 0;
+const totalSlides = 3;
+function updateSlider() {
+slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+dots.forEach((dot, index) => {
+if (index === currentSlide) {
+dot.classList.remove('bg-gray-300');
+dot.classList.add('bg-primary');
+} else {
+dot.classList.remove('bg-primary');
+dot.classList.add('bg-gray-300');
+}
+});
+}
+dots.forEach((dot, index) => {
+dot.addEventListener('click', function() {
+currentSlide = index;
+updateSlider();
+});
+});
+setInterval(() => {
+currentSlide = (currentSlide + 1) % totalSlides;
+updateSlider();
+}, 6000);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Professional ISP & IT Solutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFB800',
+                        secondary: '#0A1933'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card .card-details {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .card-details {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid rgba(255, 184, 0, 0.2);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+        }
+        
+        .progress-circle {
+            transform: rotate(-90deg);
+        }
+        
+        .progress-path {
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+            transition: stroke-dashoffset 2s ease;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0A1933 0%, #1a2b4a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://readdy.ai/api/search-image?query=modern%20enterprise%20network%20infrastructure%20data%20center%20servers%20cables%20technology%20professional%20industrial%20environment%20dark%20navy%20blue%20background%20geometric%20patterns%20golden%20accents%20minimal%20clean%20design&width=1920&height=800&seq=hero-bg&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-secondary text-white py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="font-['Pacifico'] text-2xl text-primary">logo</div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#" class="hover:text-primary transition-colors">Home</a>
+                <a href="#" class="text-primary">Services</a>
+                <a href="#" class="hover:text-primary transition-colors">Solutions</a>
+                <a href="#" class="hover:text-primary transition-colors">About</a>
+                <a href="#" class="hover:text-primary transition-colors">Contact</a>
+            </nav>
+            <button class="bg-primary text-secondary px-6 py-2 !rounded-button whitespace-nowrap font-semibold hover:bg-yellow-500 transition-colors">
+                Get Quote
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <div class="w-16 h-1 bg-primary mx-auto mb-8"></div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Reliable Internet & IT Services<br>
+                <span class="text-primary">For Modern Enterprises</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+                Comprehensive ISP and IT solutions designed to power your business growth with enterprise-grade reliability, security, and performance.
+            </p>
+            <button class="bg-primary text-secondary px-8 py-4 !rounded-button whitespace-nowrap text-lg font-semibold hover:bg-yellow-500 transition-colors">
+                Explore Our Services
+            </button>
+        </div>
+    </section>
+
+    <!-- Service Category Tabs -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-secondary mb-4">Our Service Categories</h2>
+                <p class="text-gray-600 text-lg">Choose from our comprehensive range of professional services</p>
+            </div>
+            
+            <!-- Tab Navigation -->
+            <div class="flex justify-center mb-12">
+                <div class="bg-white rounded-lg p-2 shadow-lg">
+                    <button class="tab-btn px-8 py-3 !rounded-button whitespace-nowrap font-semibold transition-all bg-primary text-secondary" data-tab="isp">
+                        ISP Services
+                    </button>
+                    <button class="tab-btn px-8 py-3 !rounded-button whitespace-nowrap font-semibold transition-all text-secondary hover:bg-gray-100" data-tab="it">
+                        IT Managed Services
+                    </button>
+                    <button class="tab-btn px-8 py-3 !rounded-button whitespace-nowrap font-semibold transition-all text-secondary hover:bg-gray-100" data-tab="telecom">
+                        Telecom Services
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div id="isp-content" class="tab-content active">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-wifi-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Leased Line</h3>
+                        <p class="text-gray-300 mb-6">Dedicated high-speed internet connectivity for enterprises</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• 99.9% uptime guarantee</li>
+                                <li>• Symmetric upload/download speeds</li>
+                                <li>• 24/7 technical support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-global-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Fiber Internet</h3>
+                        <p class="text-gray-300 mb-6">Ultra-fast fiber optic internet solutions</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Up to 10 Gbps speeds</li>
+                                <li>• Low latency connections</li>
+                                <li>• Scalable bandwidth options</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-router-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">MPLS Network</h3>
+                        <p class="text-gray-300 mb-6">Secure multi-site connectivity solutions</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Private network infrastructure</li>
+                                <li>• Quality of Service (QoS)</li>
+                                <li>• Multi-location connectivity</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-cloud-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Cloud Connectivity</h3>
+                        <p class="text-gray-300 mb-6">Direct cloud service provider connections</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• AWS, Azure, GCP direct connect</li>
+                                <li>• Reduced latency and costs</li>
+                                <li>• Enhanced security</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-shield-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">DDoS Protection</h3>
+                        <p class="text-gray-300 mb-6">Advanced threat protection and mitigation</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Real-time attack detection</li>
+                                <li>• Automatic traffic filtering</li>
+                                <li>• 24/7 security monitoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-speed-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Bandwidth Management</h3>
+                        <p class="text-gray-300 mb-6">Intelligent traffic optimization and control</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Traffic prioritization</li>
+                                <li>• Usage analytics and reporting</li>
+                                <li>• Dynamic bandwidth allocation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="it-content" class="tab-content">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-server-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Infrastructure Management</h3>
+                        <p class="text-gray-300 mb-6">Complete IT infrastructure monitoring and management</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Server and network monitoring</li>
+                                <li>• Proactive maintenance</li>
+                                <li>• Performance optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-camera-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">CCTV Surveillance</h3>
+                        <p class="text-gray-300 mb-6">Advanced video surveillance and security systems</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• HD/4K camera installation</li>
+                                <li>• Remote monitoring capabilities</li>
+                                <li>• Motion detection and alerts</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-shield-check-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Firewall Solutions</h3>
+                        <p class="text-gray-300 mb-6">Enterprise-grade network security and protection</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Next-generation firewalls</li>
+                                <li>• Intrusion prevention systems</li>
+                                <li>• VPN and remote access</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-database-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Data Backup</h3>
+                        <p class="text-gray-300 mb-6">Automated backup and disaster recovery solutions</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Automated daily backups</li>
+                                <li>• Cloud and on-premise options</li>
+                                <li>• Rapid recovery procedures</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-computer-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Desktop Support</h3>
+                        <p class="text-gray-300 mb-6">Comprehensive end-user IT support services</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Remote and on-site support</li>
+                                <li>• Software installation and updates</li>
+                                <li>• Hardware troubleshooting</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-bug-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Security Monitoring</h3>
+                        <p class="text-gray-300 mb-6">24/7 cybersecurity monitoring and response</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Threat detection and analysis</li>
+                                <li>• Incident response procedures</li>
+                                <li>• Security compliance reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="telecom-content" class="tab-content">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-phone-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">VoIP Solutions</h3>
+                        <p class="text-gray-300 mb-6">Advanced voice over IP communication systems</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• HD voice quality</li>
+                                <li>• Unified communications</li>
+                                <li>• Mobile integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-customer-service-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Call Center Solutions</h3>
+                        <p class="text-gray-300 mb-6">Complete call center infrastructure and management</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Automatic call distribution</li>
+                                <li>• Real-time analytics</li>
+                                <li>• CRM integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-video-chat-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Video Conferencing</h3>
+                        <p class="text-gray-300 mb-6">Professional video communication platforms</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Multi-party video calls</li>
+                                <li>• Screen sharing capabilities</li>
+                                <li>• Recording and playback</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-smartphone-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Mobile Solutions</h3>
+                        <p class="text-gray-300 mb-6">Enterprise mobile communication services</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Corporate mobile plans</li>
+                                <li>• Device management</li>
+                                <li>• Mobile security solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-message-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">SMS Services</h3>
+                        <p class="text-gray-300 mb-6">Bulk SMS and messaging solutions for businesses</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Bulk messaging campaigns</li>
+                                <li>• Two-way SMS communication</li>
+                                <li>• API integration support</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card bg-secondary text-white p-8 rounded-xl relative overflow-hidden">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mb-6">
+                            <i class="ri-broadcast-line text-secondary text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Broadcasting</h3>
+                        <p class="text-gray-300 mb-6">Professional broadcasting and streaming services</p>
+                        <div class="card-details">
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• Live streaming solutions</li>
+                                <li>• Content delivery networks</li>
+                                <li>• Multi-platform distribution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Bundles -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-secondary mb-4">Service Bundles</h2>
+                <p class="text-gray-600 text-lg">Comprehensive packages designed for different business needs</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="accordion-item">
+                    <button class="accordion-trigger w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">Enterprise Connectivity Bundle</h3>
+                            <p class="text-gray-600">Complete internet and network solutions for large enterprises</p>
+                        </div>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line text-secondary text-xl accordion-icon transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-6 border-l-4 border-primary">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="font-bold text-secondary mb-4">Included Services:</h4>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li>• Dedicated Leased Line (100 Mbps - 10 Gbps)</li>
+                                        <li>• MPLS Network Connectivity</li>
+                                        <li>• DDoS Protection</li>
+                                        <li>• 24/7 Network Monitoring</li>
+                                        <li>• Backup Internet Connection</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-secondary mb-4">Key Benefits:</h4>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li>• 99.9% uptime SLA guarantee</li>
+                                        <li>• Dedicated account manager</li>
+                                        <li>• Priority technical support</li>
+                                        <li>• Scalable bandwidth options</li>
+                                        <li>• Cost-effective bundled pricing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <button class="bg-primary text-secondary px-6 py-3 !rounded-button whitespace-nowrap font-semibold hover:bg-yellow-500 transition-colors">
+                                    Request Quote
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-trigger w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">Complete IT Management Bundle</h3>
+                            <p class="text-gray-600">Full-service IT infrastructure management and support</p>
+                        </div>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line text-secondary text-xl accordion-icon transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-6 border-l-4 border-primary">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="font-bold text-secondary mb-4">Included Services:</h4>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li>• Infrastructure Management</li>
+                                        <li>• CCTV Surveillance System</li>
+                                        <li>• Firewall and Security Solutions</li>
+                                        <li>• Data Backup and Recovery</li>
+                                        <li>• Desktop Support Services</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-secondary mb-4">Key Benefits:</h4>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li>• Proactive monitoring and maintenance</li>
+                                        <li>• Reduced IT operational costs</li>
+                                        <li>• Enhanced security posture</li>
+                                        <li>• Rapid issue resolution</li>
+                                        <li>• Comprehensive reporting</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <button class="bg-primary text-secondary px-6 py-3 !rounded-button whitespace-nowrap font-semibold hover:bg-yellow-500 transition-colors">
+                                    Request Quote
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <button class="accordion-trigger w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors flex justify-between items-center">
+                        <div>
+                            <h3 class="text-xl font-bold text-secondary mb-2">Unified Communications Bundle</h3>
+                            <p class="text-gray-600">Complete telecom and communication solutions</p>
+                        </div>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-arrow-down-s-line text-secondary text-xl accordion-icon transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-6 border-l-4 border-primary">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div>
+                                    <h4 class="font-bold text-secondary mb-4">Included Services:</h4>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li>• VoIP Phone System</li>
+                                        <li>• Video Conferencing Platform</li>
+                                        <li>• Call Center Solutions</li>
+                                        <li>• Mobile Communication Plans</li>
+                                        <li>• SMS and Messaging Services</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-secondary mb-4">Key Benefits:</h4>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li>• Integrated communication platform</li>
+                                        <li>• Improved team collaboration</li>
+                                        <li>• Reduced communication costs</li>
+                                        <li>• Mobile workforce support</li>
+                                        <li>• Advanced call management features</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <button class="bg-primary text-secondary px-6 py-3 !rounded-button whitespace-nowrap font-semibold hover:bg-yellow-500 transition-colors">
+                                    Request Quote
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Case Studies -->
+    <section class="py-16 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-secondary mb-4">Client Success Stories</h2>
+                <p class="text-gray-600 text-lg">See how we've helped businesses achieve their goals</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-secondary text-white p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mr-4">
+                            <i class="ri-building-line text-secondary text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">TechCorp Industries</h4>
+                            <p class="text-gray-300 text-sm">Manufacturing</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg mb-6 italic">
+                        "The dedicated leased line solution increased our productivity by 40% and eliminated all connectivity issues. Outstanding service and support."
+                    </blockquote>
+                    <div class="border-t border-gray-600 pt-4">
+                        <p class="font-semibold">Michael Rodriguez</p>
+                        <p class="text-gray-300 text-sm">IT Director</p>
+                    </div>
+                </div>
+                
+                <div class="bg-secondary text-white p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mr-4">
+                            <i class="ri-hospital-line text-secondary text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">HealthCare Plus</h4>
+                            <p class="text-gray-300 text-sm">Healthcare</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg mb-6 italic">
+                        "Their comprehensive IT management bundle allowed us to focus on patient care while ensuring our systems are always secure and operational."
+                    </blockquote>
+                    <div class="border-t border-gray-600 pt-4">
+                        <p class="font-semibold">Dr. Sarah Chen</p>
+                        <p class="text-gray-300 text-sm">Chief Technology Officer</p>
+                    </div>
+                </div>
+                
+                <div class="bg-secondary text-white p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mr-4">
+                            <i class="ri-store-line text-secondary text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">RetailMax Group</h4>
+                            <p class="text-gray-300 text-sm">Retail</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-lg mb-6 italic">
+                        "The unified communications solution streamlined our operations across 15 locations. Customer service response time improved by 60%."
+                    </blockquote>
+                    <div class="border-t border-gray-600 pt-4">
+                        <p class="font-semibold">James Thompson</p>
+                        <p class="text-gray-300 text-sm">Operations Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Metrics -->
+    <section class="py-16 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-secondary mb-4">Our Performance Metrics</h2>
+                <p class="text-gray-600 text-lg">Industry-leading service levels and customer satisfaction</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <svg class="progress-circle w-32 h-32">
+                            <circle cx="64" cy="64" r="45" stroke="#f3f4f6" stroke-width="8" fill="none"></circle>
+                            <circle class="progress-path" cx="64" cy="64" r="45" stroke="#FFB800" stroke-width="8" fill="none" data-progress="99.9"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-3xl font-bold text-secondary">99.9%</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Network Uptime</h3>
+                    <p class="text-gray-600">Guaranteed service availability with minimal downtime</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <svg class="progress-circle w-32 h-32">
+                            <circle cx="64" cy="64" r="45" stroke="#f3f4f6" stroke-width="8" fill="none"></circle>
+                            <circle class="progress-path" cx="64" cy="64" r="45" stroke="#FFB800" stroke-width="8" fill="none" data-progress="15"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-3xl font-bold text-secondary">15min</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Response Time</h3>
+                    <p class="text-gray-600">Average technical support response time</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <svg class="progress-circle w-32 h-32">
+                            <circle cx="64" cy="64" r="45" stroke="#f3f4f6" stroke-width="8" fill="none"></circle>
+                            <circle class="progress-path" cx="64" cy="64" r="45" stroke="#FFB800" stroke-width="8" fill="none" data-progress="98"></circle>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-3xl font-bold text-secondary">98%</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">Client Satisfaction</h3>
+                    <p class="text-gray-600">Customer satisfaction rating based on surveys</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-secondary text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="w-full h-full" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20business%20meeting%20technology%20consultation%20experts%20discussing%20network%20solutions%20modern%20office%20environment%20dark%20navy%20background%20geometric%20patterns%20minimal%20design&width=1920&height=600&seq=cta-bg&orientation=landscape'); background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Let our experts design a customized solution that meets your specific requirements and budget. Get started with a free consultation today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="bg-primary text-secondary px-8 py-4 !rounded-button whitespace-nowrap text-lg font-semibold hover:bg-yellow-500 transition-colors">
+                    Talk to Our Experts
+                </button>
+                <button class="border-2 border-primary text-primary px-8 py-4 !rounded-button whitespace-nowrap text-lg font-semibold hover:bg-primary hover:text-secondary transition-colors">
+                    Schedule a Demo
+                </button>
+            </div>
+            <div class="mt-12 grid md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mx-auto mb-4">
+                        <i class="ri-phone-line text-secondary text-xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Call Us</h4>
+                    <p class="text-gray-300">+1 (555) 123-4567</p>
+                </div>
+                <div>
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mx-auto mb-4">
+                        <i class="ri-mail-line text-secondary text-xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Email Us</h4>
+                    <p class="text-gray-300">experts@company.com</p>
+                </div>
+                <div>
+                    <div class="w-12 h-12 flex items-center justify-center bg-primary rounded-lg mx-auto mb-4">
+                        <i class="ri-time-line text-secondary text-xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Business Hours</h4>
+                    <p class="text-gray-300">24/7 Support Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="font-['Pacifico'] text-2xl text-primary mb-4">logo</div>
+                    <p class="text-gray-400 mb-4">Leading provider of enterprise ISP and IT solutions, delivering reliable connectivity and comprehensive technology services.</p>
+                    <div class="flex space-x-4">
+                        <div class="w-8 h-8 flex items-center justify-center bg-primary rounded text-secondary">
+                            <i class="ri-facebook-fill"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center bg-primary rounded text-secondary">
+                            <i class="ri-twitter-fill"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center bg-primary rounded text-secondary">
+                            <i class="ri-linkedin-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition-colors">ISP Services</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">IT Management</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Telecom Solutions</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Security Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-primary transition-colors">24/7 Support</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Service Status</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact Info</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span>123 Business District, Tech City, TC 12345</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span>info@company.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Company Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="tab-functionality">
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+                    
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-secondary');
+                        btn.classList.add('text-secondary', 'hover:bg-gray-100');
+                    });
+                    
+                    this.classList.add('bg-primary', 'text-secondary');
+                    this.classList.remove('hover:bg-gray-100');
+                    
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    document.getElementById(targetTab + '-content').classList.add('active');
+                });
+            });
+        });
+    </script>
+
+    <script id="accordion-functionality">
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+            
+            accordionTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.accordion-icon');
+                    
+                    if (content.classList.contains('active')) {
+                        content.classList.remove('active');
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        document.querySelectorAll('.accordion-content').forEach(c => {
+                            c.classList.remove('active');
+                        });
+                        document.querySelectorAll('.accordion-icon').forEach(i => {
+                            i.style.transform = 'rotate(0deg)';
+                        });
+                        
+                        content.classList.add('active');
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="progress-animation">
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressPaths = document.querySelectorAll('.progress-path');
+            
+            const animateProgress = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const path = entry.target;
+                        const progress = parseFloat(path.getAttribute('data-progress'));
+                        const circumference = 2 * Math.PI * 45;
+                        const offset = circumference - (progress / 100) * circumference;
+                        
+                        setTimeout(() => {
+                            path.style.strokeDashoffset = offset;
+                        }, 500);
+                        
+                        observer.unobserve(path);
+                    }
+                });
+            };
+            
+            const observer = new IntersectionObserver(animateProgress, {
+                threshold: 0.5
+            });
+            
+            progressPaths.forEach(path => {
+                observer.observe(path);
+            });
+        });
+    </script>
+</body>
+</html>
